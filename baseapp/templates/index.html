@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='{% static 'css/style.css' %}'>
+    <script>
+        var contentText = '{{ content_text|escapejs }}';
+    </script>
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+    <div class='main_body'>
+        <div class='heading'>
+            <h1>Hindi Typing Test</h1>
+        </div>
+
+        <div id='speed' class='sub_box'>
+            <p>Typing Speed</p>
+            <p>{{ typing_speed }}</p>
+        </div>
+
+        <div id='content' class='sub_box'>
+            <p>{{ content_text }}</p>
+        </div>
+
+        <div id='inputbox' class='sub_box'>
+            <textarea id="textarea" cols='50' rows='10' placeholder='Write here..........'></textarea>
+        </div>
+        <div>
+            <button id="submit-btn" type='button'>Submit</button>
+        </div>
+    </div>
+</body>
+</html>
